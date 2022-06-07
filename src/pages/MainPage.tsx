@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SpaceTourismLogo from "../assets/shared/logo.svg"
 
 export const MainPage = () => {
@@ -17,32 +18,28 @@ export const MainPage = () => {
       <nav>
         <ul id="primary-navigation" data-visible="false" className="primary-navigation underline-indicators flex">
           <li className="active">
-            <a
+            <Link
               className="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="index.html"
-              ><span aria-hidden="true">00</span>Home</a
-            >
+              to="/"
+              ><span aria-hidden="true">00</span>Home</Link>
           </li>
           <li>
-            <a
+            <Link
               className="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="destination.html"
-              ><span aria-hidden="true">01</span>Destination</a
-            >
+              to="/destination"
+              ><span aria-hidden="true">01</span>Destination</Link>
           </li>
           <li>
-            <a
+            <Link
               className="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="crew.html"
-              ><span aria-hidden="true">02</span>Crew</a
-            >
+              to="/crew"
+              ><span aria-hidden="true">02</span>Crew</Link>
           </li>
           <li>
-            <a
+            <Link
               className="ff-sans-cond uppercase text-white letter-spacing-2"
-              href="technology.html"
-              ><span aria-hidden="true">03</span>Technology</a
-            >
+              to="/technology"
+              ><span aria-hidden="true">03</span>Technology</Link>
           </li>
         </ul>
       </nav>
@@ -62,11 +59,10 @@ export const MainPage = () => {
         </p>
       </div>
       <div>
-        <a
-          href="destination.html"
+        <Link
+          to="destination"
           className="large-button uppercase ff-serif text-dark bg-white"
-          >Explore</a
-        >
+          >Explore</Link>
       </div>
     </main>
     </div>
