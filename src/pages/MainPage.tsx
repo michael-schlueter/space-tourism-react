@@ -4,16 +4,16 @@ import SpaceTourismLogo from "../assets/shared/logo.svg"
 
 export const MainPage = () => {
 
-  const [showHamburgerButton, setShowHamburgerButton] = useState("false");
-  const [showSideNavigation, setShowSideNavigation] = useState("false");
+  const [showHamburgerButton, setShowHamburgerButton] = useState(false);
+  const [showSideNavigation, setShowSideNavigation] = useState(false);
 
   const handleClick = () => {
-    if (showSideNavigation === "false") {
-      setShowHamburgerButton("true");
-      setShowSideNavigation("true");
+    if (showSideNavigation === false) {
+      setShowHamburgerButton(true);
+      setShowSideNavigation(true);
     } else {
-      setShowHamburgerButton("false");
-      setShowSideNavigation("false");
+      setShowHamburgerButton(false);
+      setShowSideNavigation(false);
     }
   }
 
