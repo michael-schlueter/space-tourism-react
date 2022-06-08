@@ -1,5 +1,14 @@
 import React from "react";
+import data from '../data.json';
 import { NavBar } from "../components/NavBar";
+import MoonImagePng from "../assets/destination/image-moon.png"
+import MoonImageWebp from "../assets/destination/image-moon.webp"
+import MarsImagePng from "../assets/destination/image-moon.png"
+import MarsImageWebp from "../assets/destination/image-moon.webp"
+import EuropaImagePng from "../assets/destination/image-moon.png"
+import EuropaImageWebp from "../assets/destination/image-moon.webp"
+import TitanImagePng from "../assets/destination/image-moon.png"
+import TitanImageWebp from "../assets/destination/image-moon.webp"
 
 export const DestinationPage = () => {
   return (
@@ -19,10 +28,10 @@ export const DestinationPage = () => {
 
         <picture id="moon-image">
           <source
-            srcSet="assets/destination/image-moon.webp"
+            srcSet={MoonImageWebp}
             type="image/webp"
           />
-          <img src="assets/destination/image-moon.png" alt="the moon" />
+          <img src={MoonImagePng} alt={data.destinations[0].name} />
         </picture>
 
         <div
@@ -78,23 +87,20 @@ export const DestinationPage = () => {
           tabIndex={0}
           role="tabpanel"
         >
-          <h2 className="fs-800 uppercase ff-serif">Moon</h2>
+          <h2 className="fs-800 uppercase ff-serif">{data.destinations[0].name}</h2>
 
           <p>
-            See our planet as you’ve never seen it before. A perfect relaxing
-            trip away to help regain perspective and come back refreshed. While
-            you’re there, take in some history by visiting the Luna 2 and Apollo
-            11 landing sites.
+            {data.destinations[0].description}
           </p>
 
           <div className="destination-meta flex">
             <div>
               <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
-              <p className="ff-serif uppercase">384,400 km</p>
+              <p className="ff-serif uppercase">{data.destinations[0].distance}</p>
             </div>
             <div>
               <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
-              <p className="ff-serif uppercase">3 days</p>
+              <p className="ff-serif uppercase">{data.destinations[0].travel}</p>
             </div>
           </div>
         </article>
