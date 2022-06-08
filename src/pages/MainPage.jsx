@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SpaceTourismLogo from "../assets/shared/logo.svg"
 
 export const MainPage = () => {
+
+  const [showHamburgerButton, setShowHamburgerButton] = useState("false");
+  const [showSideNavigation, setShowSideNavigation] = useState("false");
+
+  const handleClick = () => {
+    if (showSideNavigation === "false") {
+      setShowHamburgerButton("true");
+      setShowSideNavigation("true");
+    } else {
+      setShowHamburgerButton("false");
+      setShowSideNavigation("false");
+    }
+  }
+
   return (
     <div className='wrapper home'>
         <a className="skip-to-content" href="#main">Skip to content</a>
@@ -14,9 +28,9 @@ export const MainPage = () => {
           className="logo"
         />
       </div>
-      <button className="mobile-nav-toggle" aria-controls="primary-navigation"><span className="sr-only" aria-expanded="false">Menu</span></button>
+      <button className="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded={showHamburgerButton} onClick={handleClick}><span className="sr-only">Menu</span></button>
       <nav>
-        <ul id="primary-navigation" data-visible="false" className="primary-navigation underline-indicators flex">
+        <ul id="primary-navigation" data-visible={showSideNavigation} className="primary-navigation underline-indicators flex">
           <li className="active">
             <Link
               className="ff-sans-cond uppercase text-white letter-spacing-2"
