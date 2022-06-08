@@ -1,7 +1,74 @@
-import React from 'react'
+import React, { useState } from "react";
+import SpaceTourismLogo from "../assets/shared/logo.svg";
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
+  const [showHamburgerButton, setShowHamburgerButton] = useState(false);
+  const [showSideNavigation, setShowSideNavigation] = useState(false);
+
+  const handleClick = () => {
+    if (showSideNavigation === false) {
+      setShowHamburgerButton(true);
+      setShowSideNavigation(true);
+    } else {
+      setShowHamburgerButton(false);
+      setShowSideNavigation(false);
+    }
+  };
+
   return (
-    <div>NavBar</div>
-  )
-}
+    <header className="primary-header flex">
+      <div>
+        <img src={SpaceTourismLogo} alt="space tourism logo" className="logo" />
+      </div>
+      <button
+        className="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded={showHamburgerButton}
+        onClick={handleClick}
+      >
+        <span className="sr-only">Menu</span>
+      </button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible={showSideNavigation}
+          className="primary-navigation underline-indicators flex"
+        >
+          <li className="active">
+            <Link
+              className="ff-sans-cond uppercase text-white letter-spacing-2"
+              to="/"
+            >
+              <span aria-hidden="true">00</span>Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="ff-sans-cond uppercase text-white letter-spacing-2"
+              to="/destination"
+            >
+              <span aria-hidden="true">01</span>Destination
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="ff-sans-cond uppercase text-white letter-spacing-2"
+              to="/crew"
+            >
+              <span aria-hidden="true">02</span>Crew
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="ff-sans-cond uppercase text-white letter-spacing-2"
+              to="/technology"
+            >
+              <span aria-hidden="true">03</span>Technology
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
