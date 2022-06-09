@@ -12,7 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="crew" element={<CrewPage />} />
-        <Route path="destination" element={<DestinationPage />} />
+        <Route path="destination">
+          <Route path=":destinationId" element={<DestinationPage />} />
+        </Route>
         <Route path="technology" element={<TechnologyPage />} />
       </Routes>
     </BrowserRouter>
