@@ -341,7 +341,7 @@ select {
   text-decoration: none;
 }
 
-.primary-navigation a > span {
+.primary-navigation a li > span {
   font-weight: 700;
   margin-right: 0.5em;
 }

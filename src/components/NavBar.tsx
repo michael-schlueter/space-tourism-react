@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SpaceTourismLogo from "../assets/shared/logo.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   const [showHamburgerButton, setShowHamburgerButton] = useState(false);
@@ -35,38 +35,43 @@ export const NavBar = () => {
           data-visible={showSideNavigation}
           className="primary-navigation underline-indicators flex"
         >
-          <li className="active">
-            <Link
+            <NavLink
               className="ff-sans-cond uppercase text-white letter-spacing-2"
               to="/"
             >
-              <span aria-hidden="true">00</span>Home
-            </Link>
-          </li>
-          <li>
-            <Link
+              <li>
+              <span aria-hidden="true">01</span>Home
+              </li>
+            </NavLink>
+          
+          <NavLink
               className="ff-sans-cond uppercase text-white letter-spacing-2"
-              to="/destination"
+              to="/destination/0"
             >
-              <span aria-hidden="true">01</span>Destination
-            </Link>
-          </li>
-          <li>
-            <Link
+              <li>
+              <span aria-hidden="true">02</span>Destination
+              </li>
+            </NavLink>
+          
+          <NavLink
               className="ff-sans-cond uppercase text-white letter-spacing-2"
               to="/crew"
             >
-              <span aria-hidden="true">02</span>Crew
-            </Link>
-          </li>
-          <li>
-            <Link
+              <li>
+              <span aria-hidden="true">03</span>Crew
+              </li>
+            </NavLink>
+          
+          
+            <NavLink
               className="ff-sans-cond uppercase text-white letter-spacing-2"
               to="/technology"
             >
-              <span aria-hidden="true">03</span>Technology
-            </Link>
-          </li>
+              <li>
+              <span aria-hidden="true">04</span>Technology
+              </li>
+            </NavLink>
+          
         </ul>
       </nav>
     </header>
