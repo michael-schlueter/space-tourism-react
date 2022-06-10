@@ -55,7 +55,7 @@ export const NavBar = () => {
           
           <NavLink
               className="ff-sans-cond uppercase text-white letter-spacing-2"
-              to="/crew"
+              to="/crew/0"
             >
               <li>
               <span aria-hidden="true">03</span>Crew
