@@ -1,7 +1,7 @@
 import React from "react";
 import data from "../data.json";
 import { NavBar } from "../components/NavBar";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import MoonImagePng from "../assets/destination/image-moon.png";
 import MoonImageWebp from "../assets/destination/image-moon.webp";
 import MarsImagePng from "../assets/destination/image-mars.png";
@@ -15,24 +15,30 @@ export const DestinationPage = () => {
   let params = useParams();
   let destinationId = parseInt(params.destinationId);
 
-  let imageId, imageWebp, imagePng;
+  let navigate = useNavigate();
+
+  let imageId, imageWebp, imagePng, moonActive, marsActive, europaActive, titanActive;
 
   if (destinationId === 0) {
     imageId = "moon-image";
     imageWebp = MoonImageWebp;
     imagePng = MoonImagePng;
+    moonActive = true;
   } else if (destinationId === 1) {
     imageId = "mars-image";
     imageWebp = MarsImageWebp;
     imagePng = MarsImagePng;
+    marsActive = true;
   } else if (destinationId === 2) {
     imageId = "europa-image";
     imageWebp = EuropaImageWebp;
     imagePng = EuropaImagePng;
+    europaActive = true;
   } else {
     imageId = "titan-image";
     imageWebp = TitanImageWebp;
     imagePng = TitanImagePng;
+    titanActive = true;
   }
 
   return (
@@ -61,42 +67,46 @@ export const DestinationPage = () => {
           aria-label="destination list"
         >
           <button
-            aria-selected="true"
+            aria-selected={moonActive}
             role="tab"
             aria-controls="moon-tab"
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={0}
             data-image="moon-image"
+            onClick={() => navigate('../0')}
           >
             Moon
           </button>
           <button
-            aria-selected="false"
+            aria-selected={marsActive}
             role="tab"
             aria-controls="mars-tab"
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="mars-image"
+            onClick={() => navigate('../1')}
           >
             Mars
           </button>
           <button
-            aria-selected="false"
+            aria-selected={europaActive}
             role="tab"
             aria-controls="europa-tab"
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="europa-image"
+            onClick={() => navigate('../2')}
           >
             Europa
           </button>
           <button
-            aria-selected="false"
+            aria-selected={titanActive}
             role="tab"
             aria-controls="titan-tab"
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="titan-image"
+            onClick={() => navigate('../3')}
           >
             Titan
           </button>
