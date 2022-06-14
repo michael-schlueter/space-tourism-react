@@ -97,8 +97,6 @@ body {
   background-position: bottom center;
 }
 
-
-
 /* Make images easier to work with */
 img,
 picture {
@@ -127,7 +125,9 @@ select {
 }
 
 /* Modified hidden attribute */
-[hidden] { display: none !important; }
+[hidden] {
+  display: none !important;
+}
 
 /* -------------------- */
 /* Utility classes      */

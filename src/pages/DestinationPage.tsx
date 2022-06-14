@@ -19,12 +19,16 @@ export const DestinationPage = () => {
   if (params.destinationId) {
     destinationId = parseInt(params.destinationId);
   } else {
-    return (
-      <h1>Id not found</h1>
-    )
+    return <h1>Id not found</h1>;
   }
 
-  let imageId, imageWebp, imagePng, moonActive, marsActive, europaActive, titanActive;
+  let imageId,
+    imageWebp,
+    imagePng,
+    moonActive,
+    marsActive,
+    europaActive,
+    titanActive;
 
   if (destinationId === 0) {
     imageId = "moon-image";
@@ -80,7 +84,7 @@ export const DestinationPage = () => {
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={0}
             data-image="moon-image"
-            onClick={() => navigate('../0')}
+            onClick={() => navigate("../0")}
           >
             Moon
           </button>
@@ -91,7 +95,7 @@ export const DestinationPage = () => {
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="mars-image"
-            onClick={() => navigate('../1')}
+            onClick={() => navigate("../1")}
           >
             Mars
           </button>
@@ -102,7 +106,7 @@ export const DestinationPage = () => {
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="europa-image"
-            onClick={() => navigate('../2')}
+            onClick={() => navigate("../2")}
           >
             Europa
           </button>
@@ -113,7 +117,7 @@ export const DestinationPage = () => {
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="titan-image"
-            onClick={() => navigate('../3')}
+            onClick={() => navigate("../3")}
           >
             Titan
           </button>

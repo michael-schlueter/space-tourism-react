@@ -10,7 +10,6 @@ import SpaceportLandscape from "../assets/technology/image-spaceport-landscape.j
 import SpaceportPortrait from "../assets/technology/image-spaceport-portrait.jpg";
 
 export const TechnologyPage = () => {
-
   let params = useParams();
   let navigate = useNavigate();
   let technologyId;
@@ -18,12 +17,15 @@ export const TechnologyPage = () => {
   if (params.technologyId) {
     technologyId = parseInt(params.technologyId);
   } else {
-    return (
-      <h1>Id not found</h1>
-    )
+    return <h1>Id not found</h1>;
   }
 
-  let imageId, technologyLandscape, technologyPortrait, vehicleActive, spaceportActive, capsuleActive;
+  let imageId,
+    technologyLandscape,
+    technologyPortrait,
+    vehicleActive,
+    spaceportActive,
+    capsuleActive;
 
   if (technologyId === 0) {
     imageId = "launch-image";
@@ -85,7 +87,7 @@ export const TechnologyPage = () => {
             role="tab"
             tabIndex={0}
             data-image="launch-image"
-            onClick={() => navigate('../0')}
+            onClick={() => navigate("../0")}
           >
             1
           </button>
@@ -96,7 +98,7 @@ export const TechnologyPage = () => {
             role="tab"
             tabIndex={-1}
             data-image="spaceport-image"
-            onClick={() => navigate('../1')}
+            onClick={() => navigate("../1")}
           >
             2
           </button>
@@ -107,7 +109,7 @@ export const TechnologyPage = () => {
             role="tab"
             tabIndex={-1}
             data-image="capsule-image"
-            onClick={() => navigate('../2')}
+            onClick={() => navigate("../2")}
           >
             3
           </button>
@@ -123,7 +125,9 @@ export const TechnologyPage = () => {
             <h2 className="fs-600 text-accent ff-sans-cond letter-spacing-2 uppercase">
               The terminology...
             </h2>
-            <p className="fs-700 uppercase ff-serif">{data.technology[technologyId].name}</p>
+            <p className="fs-700 uppercase ff-serif">
+              {data.technology[technologyId].name}
+            </p>
           </header>
           <p className="text-accent p-50ch">
             {data.technology[technologyId].description}

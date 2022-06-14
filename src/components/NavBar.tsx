@@ -16,6 +16,10 @@ export const NavBar = () => {
     }
   };
 
+  let activeClassName =
+    "active ff-sans-cond uppercase text-white letter-spacing-2";
+  let inactiveClassName = "ff-sans-cond uppercase text-white letter-spacing-2";
+
   return (
     <header className="primary-header flex">
       <div>
@@ -35,43 +39,49 @@ export const NavBar = () => {
           data-visible={showSideNavigation}
           className="primary-navigation underline-indicators flex"
         >
-            <NavLink
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-              to="/"
-            >
-              <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
+            to="/"
+          >
+            <li>
               <span aria-hidden="true">01</span>Home
-              </li>
-            </NavLink>
-          
+            </li>
+          </NavLink>
+
           <NavLink
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-              to="/destination/0"
-            >
-              <li>
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
+            to="/destination/0"
+          >
+            <li>
               <span aria-hidden="true">02</span>Destination
-              </li>
-            </NavLink>
-          
+            </li>
+          </NavLink>
+
           <NavLink
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-              to="/crew/0"
-            >
-              <li>
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
+            to="/crew/0"
+          >
+            <li>
               <span aria-hidden="true">03</span>Crew
-              </li>
-            </NavLink>
-          
-          
-            <NavLink
-              className="ff-sans-cond uppercase text-white letter-spacing-2"
-              to="/technology/0"
-            >
-              <li>
+            </li>
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
+            to="/technology/0"
+          >
+            <li>
               <span aria-hidden="true">04</span>Technology
-              </li>
-            </NavLink>
-          
+            </li>
+          </NavLink>
         </ul>
       </nav>
     </header>
