@@ -22,6 +22,14 @@ export const CrewPage = () => {
     return <h1>Id not found</h1>;
   }
 
+  if (crewId < 0 || crewId > data.crew.length -1) {
+    return (
+      <main style={{ padding: "1rem" }}>
+          <p>Crew member not found!</p>
+        </main>
+    )
+  }
+
   let imageId,
     imageWebp,
     imagePng,

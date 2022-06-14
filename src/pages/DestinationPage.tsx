@@ -22,6 +22,14 @@ export const DestinationPage = () => {
     return <h1>Id not found</h1>;
   }
 
+  if (destinationId < 0 || destinationId > data.destinations.length -1) {
+    return (
+      <main style={{ padding: "1rem" }}>
+          <p>Destination not found!</p>
+        </main>
+    )
+  }
+
   let imageId,
     imageWebp,
     imagePng,

@@ -20,6 +20,14 @@ export const TechnologyPage = () => {
     return <h1>Id not found</h1>;
   }
 
+  if (technologyId < 0 || technologyId > data.technology.length -1) {
+    return (
+      <main style={{ padding: "1rem" }}>
+          <p>Technology not found!</p>
+        </main>
+    )
+  }
+
   let imageId,
     technologyLandscape,
     technologyPortrait,
