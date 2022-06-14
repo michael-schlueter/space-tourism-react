@@ -17,7 +17,9 @@ function App() {
         <Route path="destination">
           <Route path=":destinationId" element={<DestinationPage />} />
         </Route>
-        <Route path="technology" element={<TechnologyPage />} />
+        <Route path="technology">
+          <Route path=":technologyId" element={<TechnologyPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
