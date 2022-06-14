@@ -1,7 +1,7 @@
 import React from "react";
 import { NavBar } from "../components/NavBar";
 import data from "../data.json";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import LaunchVehicleLandscape from "../assets/technology/image-launch-vehicle-landscape.jpg";
 import LaunchVehiclePortrait from "../assets/technology/image-launch-vehicle-portrait.jpg";
 import SpaceCapsuleLandscape from "../assets/technology/image-space-capsule-landscape.jpg";
@@ -14,20 +14,25 @@ export const TechnologyPage = () => {
   let params = useParams();
   let technologyId = parseInt(params.technologyId);
 
-  let imageId, technologyLandscape, technologyPortrait
+  let navigate = useNavigate();
+
+  let imageId, technologyLandscape, technologyPortrait, vehicleActive, spaceportActive, capsuleActive;
 
   if (technologyId === 0) {
     imageId = "launch-image";
     technologyLandscape = LaunchVehicleLandscape;
     technologyPortrait = LaunchVehiclePortrait;
+    vehicleActive = true;
   } else if (technologyId === 1) {
     imageId = "spaceport-image";
     technologyLandscape = SpaceportLandscape;
     technologyPortrait = SpaceportPortrait;
+    spaceportActive = true;
   } else {
     imageId = "capsule-image";
     technologyLandscape = SpaceCapsuleLandscape;
     technologyPortrait = SpaceCapsulePortrait;
+    capsuleActive = true;
   }
 
   return (
@@ -68,31 +73,34 @@ export const TechnologyPage = () => {
         >
           <button
             className="text-white ff-serif fs-600 bg-dark"
-            aria-selected="true"
+            aria-selected={vehicleActive}
             aria-controls="launch-tab"
             role="tab"
             tabIndex={0}
             data-image="launch-image"
+            onClick={() => navigate('../0')}
           >
             1
           </button>
           <button
             className="text-white ff-serif fs-600 bg-dark"
-            aria-selected="false"
+            aria-selected={spaceportActive}
             aria-controls="spaceport-tab"
             role="tab"
             tabIndex={-1}
             data-image="spaceport-image"
+            onClick={() => navigate('../1')}
           >
             2
           </button>
           <button
             className="text-white ff-serif fs-600 bg-dark"
-            aria-selected="false"
+            aria-selected={capsuleActive}
             aria-controls="capsule-tab"
             role="tab"
             tabIndex={-1}
             data-image="capsule-image"
+            onClick={() => navigate('../2')}
           >
             3
           </button>
