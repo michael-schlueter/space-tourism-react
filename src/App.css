@@ -376,7 +376,7 @@ select {
   }
 
   .primary-navigation.underline-indicators > .active {
-    border: 0;
+    border-color: hsl(var(--clr-white) / 1);
   }
 
   .mobile-nav-toggle {
