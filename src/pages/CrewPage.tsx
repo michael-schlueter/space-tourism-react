@@ -14,9 +14,16 @@ import gloverImagePng from "../assets/crew/image-victor-glover.png";
 export const CrewPage = () => {
 
   let params = useParams();
-  let crewId = parseInt(params.crewId);
-
   let navigate = useNavigate();
+  let crewId;
+
+  if (params.crewId) {
+    crewId = parseInt(params.crewId);
+  } else {
+    return (
+      <h1>Id not found</h1>
+    )
+  }
 
   let imageId, imageWebp, imagePng, hurleyActive, shuttleworthActive, gloverActive, ansariActive;
 

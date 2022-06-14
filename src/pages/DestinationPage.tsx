@@ -13,9 +13,16 @@ import TitanImageWebp from "../assets/destination/image-titan.webp";
 
 export const DestinationPage = () => {
   let params = useParams();
-  let destinationId = parseInt(params.destinationId);
-
   let navigate = useNavigate();
+  let destinationId;
+
+  if (params.destinationId) {
+    destinationId = parseInt(params.destinationId);
+  } else {
+    return (
+      <h1>Id not found</h1>
+    )
+  }
 
   let imageId, imageWebp, imagePng, moonActive, marsActive, europaActive, titanActive;
 

@@ -12,9 +12,16 @@ import SpaceportPortrait from "../assets/technology/image-spaceport-portrait.jpg
 export const TechnologyPage = () => {
 
   let params = useParams();
-  let technologyId = parseInt(params.technologyId);
-
   let navigate = useNavigate();
+  let technologyId;
+
+  if (params.technologyId) {
+    technologyId = parseInt(params.technologyId);
+  } else {
+    return (
+      <h1>Id not found</h1>
+    )
+  }
 
   let imageId, technologyLandscape, technologyPortrait, vehicleActive, spaceportActive, capsuleActive;
 
