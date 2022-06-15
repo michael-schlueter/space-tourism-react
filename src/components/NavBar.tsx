@@ -76,7 +76,7 @@ export const NavBar = () => {
             className={({ isActive }) =>
               isActive ? activeClassName : inactiveClassName
             }
-            to="/technology/0"
+            to="/technology"
           >
             <li>
               <span aria-hidden="true">04</span>Technology

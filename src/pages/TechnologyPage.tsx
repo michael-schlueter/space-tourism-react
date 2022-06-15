@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavBar } from "../components/NavBar";
 import data from "../data.json";
-import { useParams, useNavigate } from "react-router-dom";
+// import { useParams, useNavigate } from "react-router-dom";
 import LaunchVehicleLandscape from "../assets/technology/image-launch-vehicle-landscape.jpg";
 import LaunchVehiclePortrait from "../assets/technology/image-launch-vehicle-portrait.jpg";
 import SpaceCapsuleLandscape from "../assets/technology/image-space-capsule-landscape.jpg";
@@ -10,23 +10,25 @@ import SpaceportLandscape from "../assets/technology/image-spaceport-landscape.j
 import SpaceportPortrait from "../assets/technology/image-spaceport-portrait.jpg";
 
 export const TechnologyPage = () => {
-  let params = useParams();
-  let navigate = useNavigate();
-  let technologyId;
+  // let params = useParams();
+  // let navigate = useNavigate();
+  // let technologyId;
 
-  if (params.technologyId) {
-    technologyId = parseInt(params.technologyId);
-  } else {
-    return <h1>Id not found</h1>;
-  }
+  // if (params.technologyId) {
+  //   technologyId = parseInt(params.technologyId);
+  // } else {
+  //   return <h1>Id not found</h1>;
+  // }
 
-  if (technologyId < 0 || technologyId > data.technology.length -1) {
-    return (
-      <main style={{ padding: "1rem" }}>
-          <p>Technology not found!</p>
-        </main>
-    )
-  }
+  // if (technologyId < 0 || technologyId > data.technology.length -1) {
+  //   return (
+  //     <main style={{ padding: "1rem" }}>
+  //         <p>Technology not found!</p>
+  //       </main>
+  //   )
+  // }
+
+  const [technology, setTechnology] = useState(0);
 
   let imageId,
     technologyLandscape,
@@ -35,12 +37,12 @@ export const TechnologyPage = () => {
     spaceportActive,
     capsuleActive;
 
-  if (technologyId === 0) {
+  if (technology === 0) {
     imageId = "launch-image";
     technologyLandscape = LaunchVehicleLandscape;
     technologyPortrait = LaunchVehiclePortrait;
     vehicleActive = true;
-  } else if (technologyId === 1) {
+  } else if (technology === 1) {
     imageId = "spaceport-image";
     technologyLandscape = SpaceportLandscape;
     technologyPortrait = SpaceportPortrait;
@@ -95,7 +97,7 @@ export const TechnologyPage = () => {
             role="tab"
             tabIndex={0}
             data-image="launch-image"
-            onClick={() => navigate("../0")}
+            onClick={() => setTechnology(0)}
           >
             1
           </button>
@@ -106,7 +108,7 @@ export const TechnologyPage = () => {
             role="tab"
             tabIndex={-1}
             data-image="spaceport-image"
-            onClick={() => navigate("../1")}
+            onClick={() => setTechnology(1)}
           >
             2
           </button>
@@ -117,7 +119,7 @@ export const TechnologyPage = () => {
             role="tab"
             tabIndex={-1}
             data-image="capsule-image"
-            onClick={() => navigate("../2")}
+            onClick={() => setTechnology(2)}
           >
             3
           </button>
@@ -134,11 +136,11 @@ export const TechnologyPage = () => {
               The terminology...
             </h2>
             <p className="fs-700 uppercase ff-serif">
-              {data.technology[technologyId].name}
+              {data.technology[technology].name}
             </p>
           </header>
           <p className="text-accent p-50ch">
-            {data.technology[technologyId].description}
+            {data.technology[technology].description}
           </p>
         </article>
       </main>

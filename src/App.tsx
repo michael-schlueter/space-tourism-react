@@ -15,9 +15,7 @@ function App() {
           <Route path=":crewId" element={<CrewPage />} />
         </Route>
         <Route path="destination" element={<DestinationPage />} />
-        <Route path="technology">
-          <Route path=":technologyId" element={<TechnologyPage />} />
-        </Route>
+        <Route path="technology" element={<TechnologyPage />} />
         <Route
           path="*"
           element={
