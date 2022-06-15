@@ -44,6 +44,7 @@ export const NavBar = () => {
               isActive ? activeClassName : inactiveClassName
             }
             to="/"
+            onClick={handleClick}
           >
             <li>
               <span aria-hidden="true">01</span>Home
@@ -55,6 +56,7 @@ export const NavBar = () => {
               isActive ? activeClassName : inactiveClassName
             }
             to="/destination"
+            onClick={handleClick}
           >
             <li>
               <span aria-hidden="true">02</span>Destination
@@ -66,6 +68,7 @@ export const NavBar = () => {
               isActive ? activeClassName : inactiveClassName
             }
             to="/crew"
+            onClick={handleClick}
           >
             <li>
               <span aria-hidden="true">03</span>Crew
@@ -77,6 +80,7 @@ export const NavBar = () => {
               isActive ? activeClassName : inactiveClassName
             }
             to="/technology"
+            onClick={handleClick}
           >
             <li>
               <span aria-hidden="true">04</span>Technology
