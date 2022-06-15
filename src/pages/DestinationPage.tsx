@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "../data.json";
 import { NavBar } from "../components/NavBar";
-import { useParams, useNavigate } from "react-router-dom";
 import MoonImagePng from "../assets/destination/image-moon.png";
 import MoonImageWebp from "../assets/destination/image-moon.webp";
 import MarsImagePng from "../assets/destination/image-mars.png";
@@ -12,23 +11,8 @@ import TitanImagePng from "../assets/destination/image-titan.png";
 import TitanImageWebp from "../assets/destination/image-titan.webp";
 
 export const DestinationPage = () => {
-  let params = useParams();
-  let navigate = useNavigate();
-  let destinationId;
 
-  if (params.destinationId) {
-    destinationId = parseInt(params.destinationId);
-  } else {
-    return <h1>Id not found</h1>;
-  }
-
-  if (destinationId < 0 || destinationId > data.destinations.length -1) {
-    return (
-      <main style={{ padding: "1rem" }}>
-          <p>Destination not found!</p>
-        </main>
-    )
-  }
+  const [destination, setDestination] = useState(0);
 
   let imageId,
     imageWebp,
@@ -38,17 +22,17 @@ export const DestinationPage = () => {
     europaActive,
     titanActive;
 
-  if (destinationId === 0) {
+  if (destination === 0) {
     imageId = "moon-image";
     imageWebp = MoonImageWebp;
     imagePng = MoonImagePng;
     moonActive = true;
-  } else if (destinationId === 1) {
+  } else if (destination === 1) {
     imageId = "mars-image";
     imageWebp = MarsImageWebp;
     imagePng = MarsImagePng;
     marsActive = true;
-  } else if (destinationId === 2) {
+  } else if (destination === 2) {
     imageId = "europa-image";
     imageWebp = EuropaImageWebp;
     imagePng = EuropaImagePng;
@@ -77,7 +61,7 @@ export const DestinationPage = () => {
 
         <picture id={imageId}>
           <source srcSet={imageWebp} type="image/webp" />
-          <img src={imagePng} alt={data.destinations[destinationId].name} />
+          <img src={imagePng} alt={data.destinations[destination].name} />
         </picture>
 
         <div
@@ -92,7 +76,7 @@ export const DestinationPage = () => {
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={0}
             data-image="moon-image"
-            onClick={() => navigate("../0")}
+            onClick={() => setDestination(0)}
           >
             Moon
           </button>
@@ -103,7 +87,7 @@ export const DestinationPage = () => {
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="mars-image"
-            onClick={() => navigate("../1")}
+            onClick={() => setDestination(1)}
           >
             Mars
           </button>
@@ -114,7 +98,7 @@ export const DestinationPage = () => {
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="europa-image"
-            onClick={() => navigate("../2")}
+            onClick={() => setDestination(2)}
           >
             Europa
           </button>
@@ -125,7 +109,7 @@ export const DestinationPage = () => {
             className="uppercase ff-sans-cond text-accent letter-spacing-2"
             tabIndex={-1}
             data-image="titan-image"
-            onClick={() => navigate("../3")}
+            onClick={() => setDestination(3)}
           >
             Titan
           </button>
@@ -138,7 +122,7 @@ export const DestinationPage = () => {
           role="tabpanel"
         >
           <h2 className="fs-800 uppercase ff-serif">
-            {data.destinations[destinationId].name}
+            {data.destinations[destination].name}
           </h2>
 
           <p>{data.destinations[0].description}</p>
@@ -147,13 +131,13 @@ export const DestinationPage = () => {
             <div>
               <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
               <p className="ff-serif uppercase">
-                {data.destinations[destinationId].distance}
+                {data.destinations[destination].distance}
               </p>
             </div>
             <div>
               <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
               <p className="ff-serif uppercase">
-                {data.destinations[destinationId].travel}
+                {data.destinations[destination].travel}
               </p>
             </div>
           </div>

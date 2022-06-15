@@ -54,7 +54,7 @@ export const NavBar = () => {
             className={({ isActive }) =>
               isActive ? activeClassName : inactiveClassName
             }
-            to="/destination/0"
+            to="/destination"
           >
             <li>
               <span aria-hidden="true">02</span>Destination
