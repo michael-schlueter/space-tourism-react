@@ -11,7 +11,6 @@ import TitanImagePng from "../assets/destination/image-titan.png";
 import TitanImageWebp from "../assets/destination/image-titan.webp";
 
 export const DestinationPage = () => {
-
   const [destination, setDestination] = useState(0);
 
   let imageId,

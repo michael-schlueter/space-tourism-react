@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavBar } from "../components/NavBar";
 import data from "../data.json";
-// import { useParams, useNavigate } from "react-router-dom";
 import LaunchVehicleLandscape from "../assets/technology/image-launch-vehicle-landscape.jpg";
 import LaunchVehiclePortrait from "../assets/technology/image-launch-vehicle-portrait.jpg";
 import SpaceCapsuleLandscape from "../assets/technology/image-space-capsule-landscape.jpg";
@@ -10,24 +9,6 @@ import SpaceportLandscape from "../assets/technology/image-spaceport-landscape.j
 import SpaceportPortrait from "../assets/technology/image-spaceport-portrait.jpg";
 
 export const TechnologyPage = () => {
-  // let params = useParams();
-  // let navigate = useNavigate();
-  // let technologyId;
-
-  // if (params.technologyId) {
-  //   technologyId = parseInt(params.technologyId);
-  // } else {
-  //   return <h1>Id not found</h1>;
-  // }
-
-  // if (technologyId < 0 || technologyId > data.technology.length -1) {
-  //   return (
-  //     <main style={{ padding: "1rem" }}>
-  //         <p>Technology not found!</p>
-  //       </main>
-  //   )
-  // }
-
   const [technology, setTechnology] = useState(0);
 
   let imageId,

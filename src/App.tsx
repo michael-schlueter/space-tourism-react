@@ -11,9 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="crew">
-          <Route path=":crewId" element={<CrewPage />} />
-        </Route>
+        <Route path="crew" element={<CrewPage />} />
         <Route path="destination" element={<DestinationPage />} />
         <Route path="technology" element={<TechnologyPage />} />
         <Route

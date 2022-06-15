@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavBar } from "../components/NavBar";
-import { useParams, useNavigate } from "react-router-dom";
 import data from "../data.json";
 import ansariImageWebp from "../assets/crew/image-anousheh-ansari.webp";
 import ansariImagePng from "../assets/crew/image-anousheh-ansari.png";
@@ -12,23 +11,7 @@ import gloverImageWebp from "../assets/crew/image-victor-glover.webp";
 import gloverImagePng from "../assets/crew/image-victor-glover.png";
 
 export const CrewPage = () => {
-  let params = useParams();
-  let navigate = useNavigate();
-  let crewId;
-
-  if (params.crewId) {
-    crewId = parseInt(params.crewId);
-  } else {
-    return <h1>Id not found</h1>;
-  }
-
-  if (crewId < 0 || crewId > data.crew.length -1) {
-    return (
-      <main style={{ padding: "1rem" }}>
-          <p>Crew member not found!</p>
-        </main>
-    )
-  }
+  const [crewMember, setCrewMember] = useState(0);
 
   let imageId,
     imageWebp,
@@ -38,17 +21,17 @@ export const CrewPage = () => {
     gloverActive,
     ansariActive;
 
-  if (crewId === 0) {
+  if (crewMember === 0) {
     imageId = "hurley-image";
     imageWebp = hurleyImageWebp;
     imagePng = hurleyImagePng;
     hurleyActive = true;
-  } else if (crewId === 1) {
+  } else if (crewMember === 1) {
     imageId = "shuttleworth-image";
     imageWebp = shuttleworthImageWebp;
     imagePng = shuttleworthImagePng;
     shuttleworthActive = true;
-  } else if (crewId === 2) {
+  } else if (crewMember === 2) {
     imageId = "glover-image";
     imageWebp = gloverImageWebp;
     imagePng = gloverImagePng;
@@ -83,7 +66,7 @@ export const CrewPage = () => {
             role="tab"
             data-image="commander-image"
             tabIndex={0}
-            onClick={() => navigate("../0")}
+            onClick={() => setCrewMember(0)}
           >
             <span className="sr-only">The commander</span>
           </button>
@@ -93,7 +76,7 @@ export const CrewPage = () => {
             role="tab"
             data-image="mission-image"
             tabIndex={-1}
-            onClick={() => navigate("../1")}
+            onClick={() => setCrewMember(1)}
           >
             <span className="sr-only">The mission specialist</span>
           </button>
@@ -103,7 +86,7 @@ export const CrewPage = () => {
             role="tab"
             data-image="pilot-image"
             tabIndex={-1}
-            onClick={() => navigate("../2")}
+            onClick={() => setCrewMember(2)}
           >
             <span className="sr-only">The pilot</span>
           </button>
@@ -113,7 +96,7 @@ export const CrewPage = () => {
             role="tab"
             data-image="engineer-image"
             tabIndex={-1}
-            onClick={() => navigate("../3")}
+            onClick={() => setCrewMember(3)}
           >
             <span className="sr-only">The crew engineer</span>
           </button>
@@ -127,13 +110,13 @@ export const CrewPage = () => {
         >
           <header className="flow flow--space-small">
             <h2 className="fs-600 ff-serif uppercase">
-              {data.crew[crewId].role}
+              {data.crew[crewMember].role}
             </h2>
             <p className="fs-700 uppercase ff-serif">
-              {data.crew[crewId].name}
+              {data.crew[crewMember].name}
             </p>
           </header>
-          <p>{data.crew[crewId].bio}</p>
+          <p>{data.crew[crewMember].bio}</p>
         </article>
 
         <picture id={imageId}>

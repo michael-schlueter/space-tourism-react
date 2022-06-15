@@ -24,7 +24,7 @@ export const MainPage = () => {
         </div>
         <div>
           <Link
-            to="destination/0"
+            to="destination"
             className="large-button uppercase ff-serif text-dark bg-white"
           >
             Explore

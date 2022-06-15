@@ -65,7 +65,7 @@ export const NavBar = () => {
             className={({ isActive }) =>
               isActive ? activeClassName : inactiveClassName
             }
-            to="/crew/0"
+            to="/crew"
           >
             <li>
               <span aria-hidden="true">03</span>Crew
