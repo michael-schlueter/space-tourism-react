@@ -10,12 +10,12 @@ import SpaceportPortrait from "../assets/technology/image-spaceport-portrait.jpg
 export const TechnologyPage = () => {
   const [technology, setTechnology] = useState(0);
 
-  let imageId,
-    technologyLandscape,
-    technologyPortrait,
-    vehicleActive,
-    spaceportActive,
-    capsuleActive;
+  let imageId = "";
+  let technologyLandscape = "";
+  let technologyPortrait = "";
+  let vehicleActive = false;
+  let spaceportActive = false;
+  let capsuleActive = false;
 
   if (technology === 0) {
     imageId = "launch-image";

@@ -12,13 +12,13 @@ import gloverImagePng from "../assets/crew/image-victor-glover.png";
 export const CrewPage = () => {
   const [crewMember, setCrewMember] = useState(0);
 
-  let imageId,
-    imageWebp,
-    imagePng,
-    hurleyActive,
-    shuttleworthActive,
-    gloverActive,
-    ansariActive;
+  let imageId = "";
+  let imageWebp = "";
+  let imagePng = "";
+  let hurleyActive = false;
+  let shuttleworthActive = false;
+  let gloverActive = false;
+  let ansariActive = false;
 
   if (crewMember === 0) {
     imageId = "hurley-image";

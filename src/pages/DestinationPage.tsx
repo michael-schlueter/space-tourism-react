@@ -12,13 +12,13 @@ import TitanImageWebp from "../assets/destination/image-titan.webp";
 export const DestinationPage = () => {
   const [destination, setDestination] = useState(0);
 
-  let imageId,
-    imageWebp,
-    imagePng,
-    moonActive,
-    marsActive,
-    europaActive,
-    titanActive;
+  let imageId = "";
+  let imageWebp = "";
+  let imagePng = "";
+  let moonActive = false;
+  let marsActive = false;
+  let europaActive = false;
+  let titanActive = false;
 
   if (destination === 0) {
     imageId = "moon-image";
