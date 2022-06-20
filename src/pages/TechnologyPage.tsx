@@ -66,7 +66,6 @@ export const TechnologyPage = () => {
           aria-selected={vehicleActive}
           aria-controls="launch-tab"
           role="tab"
-          tabIndex={0}
           data-image="launch-image"
           onClick={() => setTechnology(0)}
         >
@@ -77,7 +76,6 @@ export const TechnologyPage = () => {
           aria-selected={spaceportActive}
           aria-controls="spaceport-tab"
           role="tab"
-          tabIndex={-1}
           data-image="spaceport-image"
           onClick={() => setTechnology(1)}
         >
@@ -88,7 +86,6 @@ export const TechnologyPage = () => {
           aria-selected={capsuleActive}
           aria-controls="capsule-tab"
           role="tab"
-          tabIndex={-1}
           data-image="capsule-image"
           onClick={() => setTechnology(2)}
         >
@@ -100,7 +97,6 @@ export const TechnologyPage = () => {
         className="technology-details flow"
         id="launch-tab"
         role="tabpanel"
-        tabIndex={0}
       >
         <header className="flow flow--space-small">
           <h2 className="fs-600 text-accent ff-sans-cond letter-spacing-2 uppercase">

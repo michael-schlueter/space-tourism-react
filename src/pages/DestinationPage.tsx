@@ -63,7 +63,6 @@ export const DestinationPage = () => {
           role="tab"
           aria-controls="moon-tab"
           className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={0}
           data-image="moon-image"
           onClick={() => setDestination(0)}
         >
@@ -74,7 +73,6 @@ export const DestinationPage = () => {
           role="tab"
           aria-controls="mars-tab"
           className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
           data-image="mars-image"
           onClick={() => setDestination(1)}
         >
@@ -85,7 +83,6 @@ export const DestinationPage = () => {
           role="tab"
           aria-controls="europa-tab"
           className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
           data-image="europa-image"
           onClick={() => setDestination(2)}
         >
@@ -96,7 +93,6 @@ export const DestinationPage = () => {
           role="tab"
           aria-controls="titan-tab"
           className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
           data-image="titan-image"
           onClick={() => setDestination(3)}
         >
@@ -107,7 +103,6 @@ export const DestinationPage = () => {
       <article
         className="destination-info flow"
         id="moon-tab"
-        tabIndex={0}
         role="tabpanel"
       >
         <h2 className="fs-800 uppercase ff-serif">

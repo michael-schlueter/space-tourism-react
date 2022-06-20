@@ -58,7 +58,6 @@ export const CrewPage = () => {
           aria-controls="commander-tab"
           role="tab"
           data-image="commander-image"
-          tabIndex={0}
           onClick={() => setCrewMember(0)}
         >
           <span className="sr-only">The commander</span>
@@ -68,7 +67,6 @@ export const CrewPage = () => {
           aria-controls="mission-tab"
           role="tab"
           data-image="mission-image"
-          tabIndex={-1}
           onClick={() => setCrewMember(1)}
         >
           <span className="sr-only">The mission specialist</span>
@@ -78,7 +76,6 @@ export const CrewPage = () => {
           aria-controls="pilot-tab"
           role="tab"
           data-image="pilot-image"
-          tabIndex={-1}
           onClick={() => setCrewMember(2)}
         >
           <span className="sr-only">The pilot</span>
@@ -88,7 +85,6 @@ export const CrewPage = () => {
           aria-controls="engineer-tab"
           role="tab"
           data-image="engineer-image"
-          tabIndex={-1}
           onClick={() => setCrewMember(3)}
         >
           <span className="sr-only">The crew engineer</span>
@@ -99,7 +95,6 @@ export const CrewPage = () => {
         className="crew-details flow"
         id="commander-tab"
         role="tabpanel"
-        tabIndex={0}
       >
         <header className="flow flow--space-small">
           <h2 className="fs-600 ff-serif uppercase">
