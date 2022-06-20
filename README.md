@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# Space Tourism Website
+> This responsive webpage displays information about space travel.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## General Information
+- This is a project from [Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3) which provided the design files for this project
+- The aim of this project was to build a design as close as possible to the design files. [Kevin Powell](https://www.youtube.com/kepowob) assisted in this by providing information about how to build and implement a design system in the accompanying [scrimba course](https://scrimba.com/learn/spacetravel)
+- I took the project further by implementing my own design for the technology page. Furthermore I used React instead of plain JavaScript to handle the interactive elements of the page
+- In order to boost my knowledge in using the new React Router v6 I used it for building the navigation of the site
+- I also decided to use TypeScript to implement type-safety and get further practice using TypeScript in React applications
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
+- Navigating through different pages
+- Navigating through different tabs on the pages and dynamically displaying content and pictures
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Screenshots
+![Example screenshot](https://i.ibb.co/GFxVnvQ/spacetourism.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demo
+Live demo [_here_](https://unrivaled-clafoutis-cb18ca.netlify.app/).
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup
+The dependencies which are necessary to run this app can be found in the package.json file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone the repo
+2. Navigate to the project folder in the terminal and install the necessary NPM dependencies
+```
+npm install
+```
+3. Run the app typing
+```
+npm start
+```
+in your terminal and visit localhost:3000 in your browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Learnings
+- Working with design files in figma
+- Building out a complete design system upfront with custom properties and utility classes
+- Building a layout with CSS grid
+- Implementing a responsive design e.g., using different types of navigation menus
+- Considering various accessibility aspects e.g,. implementing an option to skip straight to the content
+- Implementing navigation via React-Router using Route, Link, NavLink components as well as several hooks (e.g. useLocation)
+- Implementing no-match routes providing an error messages for invalid urls
+- Importing and displaying pictures in react applications
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Project Status
+The project is finished.
+
+
+
+## Acknowledgements
+- I built the design system following the corresponding [scrimba course](https://scrimba.com/learn/spacetravel) by [Kevin Powell](https://www.youtube.com/kepowob)
+
+
+
